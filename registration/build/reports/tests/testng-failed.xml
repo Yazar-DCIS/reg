@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [registration-test]" parallel="tests">
+  <parameter name="password" value="123456"/>
+  <parameter name="product" value="i90"/>
+  <parameter name="siteurl" value="https://www.us-immigration.com"/>
+  <parameter name="sitename" value="AIC"/>
+  <parameter name="flowname" value="Test"/>
+  <parameter name="username" value=""/>
+  <test name="Registration-withRandomEmailID2">
+    <parameter name="password" value="123456"/>
+    <parameter name="product" value="i90"/>
+    <parameter name="flowname" value="Test"/>
+    <parameter name="username" value=""/>
+    <classes>
+      <class name="com.formsdirectinc.qa.app.registration.RegistrationTest"/>
+    </classes>
+  </test> <!-- Registration-withRandomEmailID2 -->
+</suite> <!-- Failed suite [registration-test] -->

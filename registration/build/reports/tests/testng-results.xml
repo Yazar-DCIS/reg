@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[<br>EMail ID<br><font color="green">AIC.null.21.09.17.56.15@dcis.net</font>]]>
+    </line>
+  </reporter-output>
+  <suite name="registration-test" duration-ms="17573" started-at="2016-09-21T12:25:59Z" finished-at="2016-09-21T12:26:16Z">
+    <groups>
+    </groups>
+    <test name="Registration-withRandomEmailID2" duration-ms="17573" started-at="2016-09-21T12:25:59Z" finished-at="2016-09-21T12:26:16Z">
+      <class name="com.formsdirectinc.qa.app.registration.RegistrationTest">
+        <test-method status="PASS" signature="startTest()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@2ab6dc4a]" name="startTest" is-config="true" duration-ms="5057" started-at="2016-09-21T17:55:59Z" finished-at="2016-09-21T17:56:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="test(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@2ab6dc4a]" name="test" duration-ms="11890" started-at="2016-09-21T17:56:04Z" finished-at="2016-09-21T17:56:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[AIC]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.us-immigration.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[i90]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>EMail ID<br><font color="green">AIC.null.21.09.17.56.15@dcis.net</font>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@2ab6dc4a]" name="endTest" is-config="true" duration-ms="608" started-at="2016-09-21T17:56:16Z" finished-at="2016-09-21T17:56:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- com.formsdirectinc.qa.app.registration.RegistrationTest -->
+    </test> <!-- Registration-withRandomEmailID2 -->
+  </suite> <!-- registration-test -->
+</testng-results>
