@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="1" total="4" passed="3">
   <reporter-output>
+    <line>
+      <![CDATA[<br>EMail ID<br><font color="green">i539.es.USC.23.09.16.52.19@dcis.net</font>]]>
+    </line>
   </reporter-output>
-  <suite name="registration-test" duration-ms="13723" started-at="2016-09-21T12:40:05Z" finished-at="2016-09-21T12:40:19Z">
+  <suite name="registration-test" duration-ms="31014" started-at="2016-09-23T11:22:06Z" finished-at="2016-09-23T11:22:37Z">
     <groups>
+      <group name="Registration.Test.footerdisclaimer">
+        <method signature="RegistrationTest.testCase2()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="testCase2" class="com.formsdirectinc.qa.app.registration.RegistrationTest"/>
+      </group> <!-- Registration.Test.footerdisclaimer -->
+      <group name="Registration.Test.scriptVerification">
+        <method signature="RegistrationTest.testCase1()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="testCase1" class="com.formsdirectinc.qa.app.registration.RegistrationTest"/>
+      </group> <!-- Registration.Test.scriptVerification -->
+      <group name="Registration.Test.title">
+        <method signature="RegistrationTest.testCase3()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="testCase3" class="com.formsdirectinc.qa.app.registration.RegistrationTest"/>
+      </group> <!-- Registration.Test.title -->
+      <group name="Registration.Test.pagelabel">
+        <method signature="RegistrationTest.testCase4()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="testCase4" class="com.formsdirectinc.qa.app.registration.RegistrationTest"/>
+      </group> <!-- Registration.Test.pagelabel -->
     </groups>
-    <test name="Registration-withRandomEmailID2" duration-ms="13723" started-at="2016-09-21T12:40:05Z" finished-at="2016-09-21T12:40:19Z">
+    <test name="Registration-Test" duration-ms="31014" started-at="2016-09-23T11:22:06Z" finished-at="2016-09-23T11:22:37Z">
       <class name="com.formsdirectinc.qa.app.registration.RegistrationTest">
-        <test-method status="PASS" signature="startTest()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7f690630]" name="startTest" is-config="true" duration-ms="4873" started-at="2016-09-21T18:10:05Z" finished-at="2016-09-21T18:10:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startTest -->
-        <test-method status="FAIL" signature="test(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7f690630]" name="test" duration-ms="7421" started-at="2016-09-21T18:10:10Z" finished-at="2016-09-21T18:10:17Z">
+        <test-method status="PASS" signature="startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="startTest" is-config="true" duration-ms="11418" started-at="2016-09-23T16:52:06Z" finished-at="2016-09-23T16:52:18Z">
           <params>
             <param index="0">
               <value>
@@ -38,27 +49,20 @@
                 <![CDATA[123456]]>
               </value>
             </param>
-            <param index="5">
-              <value>
-                <![CDATA[Test]]>
-              </value>
-            </param>
           </params>
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
-            <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '2.47.2', revision: '4d972c01cab1304452627f837654326a11eb92fe', time: '2015-09-24 09:17:17'
-System info: host: 'otywin-17', ip: '10.0.102.178', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
-Driver info: driver.version: RemoteWebDriver]]>
-            </message>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="testCase1()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="testCase1" duration-ms="128" started-at="2016-09-23T16:52:18Z" finished-at="2016-09-23T16:52:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase1 -->
+        <test-method status="FAIL" signature="testCase2()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="testCase2" duration-ms="11" started-at="2016-09-23T16:52:18Z" finished-at="2016-09-23T16:52:18Z">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.47.2', revision: '4d972c01cab1304452627f837654326a11eb92fe', time: '2015-09-24 09:17:17'
-System info: host: 'otywin-17', ip: '10.0.102.178', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:589)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:306)
-	at com.formsdirectinc.qa.app.registration.RegistrationTest.test(RegistrationTest.java:76)
+              <![CDATA[java.lang.NullPointerException
+	at com.formsdirectinc.qa.app.registration.testcase.Footer.verifyRegistrationDisclaimer(Footer.java:42)
+	at com.formsdirectinc.qa.app.registration.RegistrationTest.testCase2(RegistrationTest.java:115)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -79,114 +83,65 @@ Driver info: driver.version: RemoteWebDriver
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:161)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:170)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:393)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:568)
-	... 22 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 37 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method status="FAIL" signature="endTest()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7f690630]" name="endTest" is-config="true" duration-ms="0" started-at="2016-09-21T18:10:17Z" finished-at="2016-09-21T18:10:17Z">
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
-            <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '2.47.2', revision: '4d972c01cab1304452627f837654326a11eb92fe', time: '2015-09-24 09:17:17'
-System info: host: 'otywin-17', ip: '10.0.102.178', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
-Driver info: driver.version: RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.47.2', revision: '4d972c01cab1304452627f837654326a11eb92fe', time: '2015-09-24 09:17:17'
-System info: host: 'otywin-17', ip: '10.0.102.178', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:589)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:464)
-	at com.formsdirectinc.qa.app.registration.RegistrationTest.endTest(RegistrationTest.java:133)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.TestRunner.afterRun(TestRunner.java:1012)
-	at org.testng.TestRunner.run(TestRunner.java:636)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:400)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:143)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:170)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:393)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:568)
-	... 21 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 36 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+        </test-method> <!-- testCase2 -->
+        <test-method status="PASS" signature="testCase3()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="testCase3" duration-ms="48" started-at="2016-09-23T16:52:18Z" finished-at="2016-09-23T16:52:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- endTest -->
+        </test-method> <!-- testCase3 -->
+        <test-method status="PASS" signature="testCase4()[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="testCase4" duration-ms="248" started-at="2016-09-23T16:52:18Z" finished-at="2016-09-23T16:52:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase4 -->
+        <test-method status="PASS" signature="testCaseDefault(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.formsdirectinc.qa.app.registration.RegistrationTest@7085bdee]" name="testCaseDefault" is-config="true" duration-ms="19141" started-at="2016-09-23T16:52:18Z" finished-at="2016-09-23T16:52:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[AIC]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.us-immigration.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[i90]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[yazar.testnew@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[mohamed.yazar@dcis.net]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[pradeep_h@dcis.net]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[!Welcome0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>EMail ID<br><font color="green">i539.es.USC.23.09.16.52.19@dcis.net</font>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testCaseDefault -->
       </class> <!-- com.formsdirectinc.qa.app.registration.RegistrationTest -->
-    </test> <!-- Registration-withRandomEmailID2 -->
+    </test> <!-- Registration-Test -->
   </suite> <!-- registration-test -->
 </testng-results>
