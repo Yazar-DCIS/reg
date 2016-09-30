@@ -31,11 +31,11 @@ public class Header  {
 	}
 	
 	
-	public Header verifyPageTitle(Sites site, String product,Properties data){
+	public Header verifyPageTitle(Sites site, String product,String lang,Properties data){
 		System.out.println("3333333333333333333333333");
 		String ttl;
 		String title = driver.getTitle();
-		ttl = data.getProperty(site + "_title");
+		ttl = data.getProperty(site+".registration.title."+lang);
 		if (!(ttl.equals(title))) {
 			System.out.println("Page title Copy Check in "+ driver.getCurrentUrl());
 			System.out.println("Page title mismatched \nFrom:\n\n " + ttl+ "\n\nTo:\n\n " + title);

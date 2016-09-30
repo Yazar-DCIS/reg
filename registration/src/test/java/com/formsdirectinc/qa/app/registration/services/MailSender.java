@@ -1,5 +1,8 @@
 package com.formsdirectinc.qa.app.registration.services;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -14,33 +17,30 @@ import javax.mail.internet.MimeMessage;
 
 public class MailSender {
 
-	public static void sendmail(String msg, String subject,String senderEmail,String SenderPassword,String receiverEmail,String receiverEmailCc) {
-		String to = receiverEmail;
+	public static void sendmail(String msg, String subject,String emailConfigproperties) {
 		
-	String cc = receiverEmailCc;
-
-		Properties props = new Properties();
-		props.put("mail.smtp.host", "smtp.gmail.com");
-		props.put("mail.smtp.socketFactory.port", "465");
-		props.put("mail.smtp.socketFactory.class",
-				"javax.net.ssl.SSLSocketFactory");
-		props.put("mail.smtp.auth", "true");
-		props.put("mail.smtp.port", "465");
-
-		Session session = Session.getDefaultInstance(props,
+		if (emailConfigproperties.isEmpty())
+			emailConfigproperties="emailConfiguration";
+		
+		try {
+		
+			Properties prop=new Properties();
+			prop.load(new FileInputStream(new File(emailConfigproperties)));
+		
+		Session session = Session.getDefaultInstance(prop,
 				new javax.mail.Authenticator() {
 					protected PasswordAuthentication getPasswordAuthentication() {
 						return new PasswordAuthentication(
-								senderEmail, SenderPassword);
+								prop.getProperty("senderEmail"), prop.getProperty("SenderPassword"));
 					}
 				});
-		try {
+		
 			MimeMessage message = new MimeMessage(session);
-			message.setFrom(new InternetAddress(senderEmail));
+			message.setFrom(new InternetAddress(prop.getProperty("senderEmail")));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(
-					to));
+					prop.getProperty("receiverEmail")));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(
-					cc));
+					prop.getProperty("receiverEmailCc")));
 			message.setSubject("Alert on" + subject);
 			message.setText("Automatically generated mail on script check, kindly do not reply \n "
 					+ msg);
@@ -48,12 +48,10 @@ public class MailSender {
 			Transport.send(message);
 			System.out.println("message sent successfully");
 
-		} catch (MessagingException e) {
-			throw new RuntimeException(e);
+		} catch (MessagingException|IOException e) {
+			e.printStackTrace();
 		}
-	
 
-	
 	}
 	
 }

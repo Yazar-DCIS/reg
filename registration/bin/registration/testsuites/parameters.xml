@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+
+
+<parameter name="sitename" value="FR"/>
+<parameter name="siteurl" value="https://www.fileright.com"/>
+<parameter name="username" value="test-30-09@dcis.net" /> to generate random email-id
+<parameter name="password" value="123456" />
+<parameter name="product" value="i539" />
+<parameter name="lang" value="es" />
+<parameter name="mailalert" value="false"/>
+<parameter name="emailconfiguration" value="src/test/resources/registration/emailConfiguration.properties"/>
+<parameter name="product" value="i130" />
+<parameter name="flowname" value="TestFlow1" />
+

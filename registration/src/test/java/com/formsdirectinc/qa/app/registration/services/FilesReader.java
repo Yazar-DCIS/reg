@@ -9,15 +9,16 @@ public class FilesReader {
 	
 	private static final String DEFAULT_OUTPUT_PATH = "src/test/resources/registration/output/%s.txt";
 	
-	public static String readFile(String fileName) throws IOException
+	public static String readFile(String fileName)
 
 	{
 
 		File outputFile = new File(String.format(DEFAULT_OUTPUT_PATH, fileName));
 		String outputFilePath = outputFile.getAbsolutePath();
 		String line = null;
-		BufferedReader br = new BufferedReader(new FileReader(outputFilePath));
+		
 		try {
+			BufferedReader br = new BufferedReader(new FileReader(outputFilePath));
 			StringBuilder sb = new StringBuilder();
 			line = br.readLine();
 			while (line != null) {
@@ -25,12 +26,13 @@ public class FilesReader {
 				sb.append("\n");
 				line = br.readLine();
 			}
+			br.close();
 			return sb.toString();
+		}catch(IOException e){
+			e.printStackTrace();
 		}
 
-		finally {
-			br.close();
-		}
+		return null;
 
 	}
 }

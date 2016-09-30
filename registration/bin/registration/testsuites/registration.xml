@@ -1,60 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="registration-test" parallel="tests"	verbose="0" thread-count="5" preserve-order="true">
-	
-	<parameter name="sitename" value="AIC"/>
-	<parameter name="siteurl" value="https://www.us-immigration.com" />
-	<parameter name="username" value="" /> <!-- to generate random email-id -->
-	<parameter name="password" value="123456" />
-	<parameter name="product" value="i90" />
-	<parameter name="senderemail" value="yazar.testnew@gmail.com" />
-	<parameter name="receiveremail" value="mohamed.yazar@dcis.net" />
-	<parameter name="receiveremailcc" value="pradeep_h@dcis.net" />
-	<parameter name="senderpassword" value="!Welcome0" />
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" [<!ENTITY parent SYSTEM "src/test/resources/registration/testsuites/parameters.xml">]>
 
+
+<suite name="registration-test" parallel="false" verbose="9" thread-count="10" preserve-order="true">
+	
+	<parameter name="" value="">&parent;</parameter>
 <test name="Registration-Test" allow-return-values="true">
 	
-	<groups>
-	<define name="Registration-all">
-	<include name="Registration.Test.*"></include>
-	<include name="default"></include>
-	</define>
-	
-	<define name="Registration-Test-Scritps">
-	<include name="Registration.Test.scriptVerification">	</include>
-	<include name="default"></include>
-	</define>
-	
-	<define name="Registration-Test-Footer">
-	<include name="Registration.Test.footerdisclaimer"></include>
-	<include name="default"></include>
-	</define>
-	
-	<define name="Registration-Test-Label">
-	<include name="Registration.Test.pagelabel"></include>
-	<include name="default"></include>
-	</define>
-	
-	
-	<define name="default-test">
-	<include name="default"></include>
-	</define>
-	
-	<run>
-	<include name="Registration-all"></include>
-	
-	
-	</run>
-
-	</groups>
-	
-				
-	<!-- <packages>
-			<package name="com.formsdirectinc.qa.app.registration"></package>
-	</packages> -->
-	
 	<classes>
-	<class name="com.formsdirectinc.qa.app.registration.RegistrationTest"></class>
+	<class name="com.formsdirectinc.qa.app.registration.RegistrationTest">
+	
+        </class>
 	</classes>
-</test> 		
+</test>
+		
 </suite>

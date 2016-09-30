@@ -2,6 +2,7 @@ package com.formsdirectinc.qa.app.registration.testcase;
 
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,8 +22,9 @@ public class PageLabel {
 	
 	public PageLabel verifyPageLabel(Sites site, String productinfo,String lang,Properties data){
 	
-		System.out.println("4444444444444444444444444");
+		System.out.println("4444444444444444");
 		driver.findElement(By.id("customerSignup-password")).click();
+		 driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		String[] pageLabel = data.getProperty(
 				site+"_registrationpageLabelCopy"+lang).split(";;");
 		String[] pageLabelXpath = data.getProperty(

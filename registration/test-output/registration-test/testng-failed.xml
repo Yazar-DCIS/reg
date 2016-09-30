@@ -1,58 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [registration-test]" parallel="tests">
+<suite thread-count="10" guice-stage="DEVELOPMENT" verbose="9" name="Failed suite [registration-test]">
+  <parameter name="" value=""/>
   <parameter name="password" value="123456"/>
-  <parameter name="product" value="i90"/>
-  <parameter name="siteurl" value="https://www.us-immigration.com"/>
-  <parameter name="senderemail" value="yazar.testnew@gmail.com"/>
-  <parameter name="sitename" value="AIC"/>
-  <parameter name="senderpassword" value="!Welcome0"/>
-  <parameter name="receiveremail" value="mohamed.yazar@dcis.net"/>
-  <parameter name="username" value=""/>
-  <parameter name="receiveremailcc" value="pradeep_h@dcis.net"/>
+  <parameter name="product" value="i130"/>
+  <parameter name="siteurl" value="https://www.fileright.com"/>
+  <parameter name="emailconfiguration" value="src/test/resources/registration/emailConfiguration.properties"/>
+  <parameter name="sitename" value="FR"/>
+  <parameter name="flowname" value="TestFlow1"/>
+  <parameter name="lang" value="es"/>
+  <parameter name="mailalert" value="false"/>
+  <parameter name="username" value="test-30-09@dcis.net"/>
   <test name="Registration-Test">
-    <groups>
-      <define name="default-test">
-        <include name="default"/>
-      </define> <!-- default-test -->
-      <define name="Registration-all">
-        <include name="Registration.Test.*"/>
-        <include name="default"/>
-      </define> <!-- Registration-all -->
-      <define name="Registration-Test-Footer">
-        <include name="Registration.Test.footerdisclaimer"/>
-        <include name="default"/>
-      </define> <!-- Registration-Test-Footer -->
-      <define name="Registration-Test-Scritps">
-        <include name="Registration.Test.scriptVerification"/>
-        <include name="default"/>
-      </define> <!-- Registration-Test-Scritps -->
-      <define name="Registration-Test-Label">
-        <include name="Registration.Test.pagelabel"/>
-        <include name="default"/>
-      </define> <!-- Registration-Test-Label -->
-      <run>
-        <include name="Registration-all"/>
-      </run>
-    </groups>
     <classes>
       <class name="com.formsdirectinc.qa.app.registration.RegistrationTest"/>
     </classes>
   </test> <!-- Registration-Test -->
-  <test name="Registration-Test(failed)" parallel="tests">
-    <groups>
-      <run>
-        <include name="Registration-all"/>
-      </run>
-    </groups>
-    <classes>
-      <class name="com.formsdirectinc.qa.app.registration.RegistrationTest">
-        <methods>
-          <include name="testCaseDefault"/>
-          <include name="testCase2"/>
-          <include name="startTest"/>
-        </methods>
-      </class> <!-- com.formsdirectinc.qa.app.registration.RegistrationTest -->
-    </classes>
-  </test> <!-- Registration-Test(failed) -->
 </suite> <!-- Failed suite [registration-test] -->

@@ -15,11 +15,11 @@ public class ConverstionScripts {
 		PageFactory.initElements(this.driver, this);
 	}
 	
-	public ConverstionScripts verifyScripts(Sites site, String productinfo,Properties data){
+	public ConverstionScripts verifyScripts(Sites site,Properties data){
 	
-		System.out.println("1111111111111111111111111");
 		
-		String[] prod_scripts = data.getProperty(site+"_scripts").split(":");
+		
+		String[] prod_scripts = data.getProperty(site+".scripts").split(":");
 		
 		for (int i = 0; i <= prod_scripts.length - 1; i++) {
 		

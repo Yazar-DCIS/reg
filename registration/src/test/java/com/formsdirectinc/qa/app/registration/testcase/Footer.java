@@ -38,8 +38,8 @@ public class Footer {
 		String actualcopy;
 		String expectedcopy;
 		System.out.println("2222222222222222222222222");
-		String[] footerDisclaimer = data.getProperty(site +"_registrationfooterDisclaimerCopy"+lang).split(";;");
-		String[] footerDisclaimerXpath = data.getProperty(site +"_SSSSSSregistrationfooterDisclaimerXpath").split(";;");
+		String[] footerDisclaimer = data.getProperty(site +".registrationfooterDisclaimerCopy."+lang).split(";;");
+		String[] footerDisclaimerXpath = data.getProperty(site +".registrationfooterDisclaimerXpath").split(";;");
 
 		
 		for (int i = 0; i <= footerDisclaimerXpath.length - 1; i++) {

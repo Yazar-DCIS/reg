@@ -5,172 +5,145 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Properties;
+import java.util.StringTokenizer;
 
-import com.formsdirectinc.qa.app.registration.services.FilesReader;
-import com.formsdirectinc.qa.app.registration.services.MailSender;
+import com.formsdirectinc.qa.app.registration.services.*;
+import com.formsdirectinc.qa.app.registration.services.EmailIDGenerator;
 import com.formsdirectinc.qa.app.registration.testcase.*;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
 
-import com.formsdirectinc.qa.TestBase;
-import com.formsdirectinc.qa.enums.*;
+
 import com.formsdirectinc.qa.utils.*;
 
 /**
- * Selenium Page Model for RegistrationPage CoreSites
- * 
- * @author:Orina
- * @Date: 6/29/15
- * @Updated:24.02.2016
+ * @author Mohamed Yazar
+ *
  */
 
-public class RegistrationTest extends TestBase {
+public class RegistrationTest extends BaseRegistrationTest {
 
-	private String testproduct;
-	private Sites site;
-	private String testlang;
-	private static final String REGISTRATION_DEFAULT_URL = "%s/registration/createaccounts.do?lang=%s&next=/payment/payment.do?application=%s";
-	private CaptureScreen myscreen;
-	private String username;
-	private String password;
-	private String emailAlert = System.getProperty("mailAlert");
+	@Parameters({ "username", "password" })
+	public RegistrationTest(String username, String password) {
+		super(username, password);
+	}
 	
+	
+	protected FirefoxDriver driver;
+	private FileOutputStream fos;
+
 	@BeforeTest(alwaysRun = true)
-	@Parameters({ "sitename", "siteurl", "product", "username", "password" })
-	public void startTest(String sitename, String siteurl, String product,
-			String username, String password) throws IOException {
+	public void startTest() throws IOException {
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
-		myscreen = new CaptureScreen(getDriver());
-		this.username = username;
-		this.password = password;
-		System.out.println("---------->" + username + "------------>"
-				+ password);
+		driver.get(absolutizeURL());
 
-		if (System.getProperty("site.name") != null) {
-			site = Sites.valueOf(System.getProperty("site.name"));
-		} else {
-			site = Sites.valueOf(sitename);
-		}
-		System.out.println("-------------->" + site);
-
-		if (System.getProperty("product") != null) {
-			testproduct = Products.valueOf(System.getProperty("product").toUpperCase()).getProductName();
-		} else {
-			testproduct = Products.valueOf(product.toUpperCase())
-					.getProductName();
-		}
-		System.out.println("-------------->" + testproduct);
-
-		if (System.getProperty("lang") != null) {
-
-			testlang = System.getProperty("lang");
-		} else {
-			testlang = "en";
-		}
-		System.out.println("-------------->" + testlang);
-
-		if (siteURL() != null) {
-			driver.get(String.format(REGISTRATION_DEFAULT_URL, siteURL(),
-					testlang, testproduct));
-		} else {
-			driver.get(String.format(REGISTRATION_DEFAULT_URL, siteurl,
-					testlang, testproduct));
-
-		}
-		
-		
-		File outputFile = new File(
-				"src/test/resources/registration/output/"+site+ product+".txt");
+		File outputFile = new File("src/test/resources/registration/output/"
+				+ getSite() + getProduct() + ".txt");
 		if (!outputFile.exists()) {
 			outputFile.createNewFile();
 		}
 		String outputFilePath = outputFile.getAbsolutePath();
-		FileOutputStream fos = new FileOutputStream(outputFilePath);
+		fos = new FileOutputStream(outputFilePath);
 
-		if (!(emailAlert == null) && (emailAlert.equalsIgnoreCase("yes"))) {
+		if (isMailAlert()) {
 
 			PrintStream ps = new PrintStream(fos);
 			System.setOut(ps);
+
 		}
 
-		
-		
 	}
 
-	@Test(groups = "Registration.Test.scriptVerification")
-	public void testCase1() {
+	@Test
+	public void test() {
+		StringTokenizer token = null;
+		String registrationScope = System.getProperty("registrationTest");
 
-		ConverstionScripts script = PageFactory.initElements(driver,
-				ConverstionScripts.class);
-		script.verifyScripts(site, testproduct, data());
+		String acqDefaultScope = "scripts,header,footer,pageLabel";
+		if (!(registrationScope == null)) {
+			if (registrationScope.equalsIgnoreCase("All"))
+
+				registrationScope = acqDefaultScope;
+
+			token = new StringTokenizer(registrationScope, ",");
+
+			while (token.hasMoreElements()) {
+				switch (token.nextToken()) {
+
+				case "scripts":
+					ConverstionScripts script = PageFactory.initElements(
+							driver, ConverstionScripts.class);
+					script.verifyScripts(getSite(), data());
+					break;
+
+				case "header":
+
+					Header util = PageFactory
+							.initElements(driver, Header.class);
+					util.verifyPageTitle(getSite(), getProduct(), getLang(),
+							data());
+					break;
+
+				case "footer":
+					System.out.println("testin***************");
+					Footer utils = PageFactory.initElements(driver,
+							Footer.class);
+					utils.verifyRegistrationDisclaimer(getSite(), getProduct(),
+							getLang(), data());
+					break;
+
+				case "pageLabel":
+
+					PageLabel label = PageFactory.initElements(driver,
+							PageLabel.class);
+					label.verifyPageLabel(getSite(), getProduct(), getLang(),
+							data());
+				}
+
+			}
+		}
 	}
 
-	@Test(groups = "Registration.Test.footerdisclaimer")
-	public void testCase2() {
-
-		Footer utils = PageFactory.initElements(driver, Footer.class);
-		utils.verifyRegistrationDisclaimer(site, testproduct,testlang ,data());
-
-	}
-
-	@Test(groups = "Registration.Test.title")
-	public void testCase3() {
-
-		Header utils = PageFactory.initElements(driver, Header.class);
-		utils.verifyPageTitle(site, testproduct, data());
-
-	}
-
-	@Test(groups = "Registration.Test.pagelabel")
-	public void testCase4() {
-		
-		PageLabel utils = PageFactory.initElements(driver, PageLabel.class);
-		utils.verifyPageLabel(site, testproduct,testlang, data());
-
-	}
-
-	@AfterTest(groups = "default")
-	@Parameters({ "sitename", "siteurl", "product","senderemail","receiveremail","receiveremailcc","senderpassword" })
-	public void testCaseDefault(String sitename, String siteurl, String product,String senderemail,String receiveremail,String receiveremailcc,String senderpassword)
+	@AfterTest(alwaysRun = true)
+	@Parameters({ "emailconfiguration" })
+	public void testCaseDefault(@Optional String emailconfigProperties)
 			throws Exception {
-		System.out.println("Finallllllllllllllllllllllll");
-		EmailIDGenerator writeEmail = PageFactory.initElements(getDriver(),
+		CaptureScreen myscreen = new CaptureScreen(driver);
+		myscreen.takeScreenShot(product, "RegistrationPage");
+		EmailIDGenerator writeEmail = PageFactory.initElements(driver,
 				EmailIDGenerator.class);
 
-		Registration createUser = new Registration(getDriver(),
-				"customerSignup");
+		Registration createUser = new Registration(driver, "customerSignup");
 		createUser.setFirstName(data().getProperty("FirstName"));
 		createUser.setLastName(data().getProperty("LastName"));
 
 		if (username.isEmpty()) {
-			createUser.setEMail(writeEmail.generateEmailID(site.name(),
-					testlang, testproduct));
+			createUser.setEMail(writeEmail.generateEmailID(getSite().name(),
+					getLang(), getProduct()), getProduct(), getLang());
 		} else {
-			createUser.setEMail(username);
+			createUser.setEMail(username, getProduct(), getLang());
 		}
 		createUser.setPassword(password);
 		createUser.setPhoneAreaCode(data().getProperty("PhoneAreaCode"));
 		createUser.setPhoneNumber1(data().getProperty("PhoneNumber1"));
 		createUser.setPhoneNumber2(data().getProperty("PhoneNumber2"));
+
 		myscreen.takeScreenShot(product, "RegistrationPage");
-		
-		
-		
-		String s = FilesReader.readFile(site+product);
-		if (!(emailAlert == null || emailAlert.equalsIgnoreCase("no"))) {
+		createUser.createAccount();
+		String s = FilesReader.readFile(getSite() + getProduct());
+		if (isMailAlert()) {
 
 			if ((s != null)) {
-				MailSender.sendmail(s, site + product +"registration",senderemail,senderpassword,receiveremail,receiveremailcc);
+				MailSender.sendmail(s, getSite() + getProduct()
+						+ "registration", emailconfigProperties);
 
 			}
 		}
-		
-		
-		
-		createUser.createAccount();
+
+		fos.close();
 
 	}
 

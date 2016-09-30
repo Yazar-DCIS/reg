@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <parameter name="product" value="not-found"/>
+  <parameter name="password" value="123456"/>
+  <parameter name="siteurl" value="https://www.us-immigration.com"/>
+  <parameter name="senderemail" value="not-found"/>
+  <parameter name="sitename" value="AIC"/>
+  <parameter name="senderpassword" value="not-found"/>
+  <parameter name="receiveremail" value="not-found"/>
+  <parameter name="receiveremailcc" value="not-found"/>
+  <parameter name="username" value="orinz@dcis.net"/>
+  <test verbose="2" name="Default test">
+    <classes>
+      <class name="com.formsdirectinc.qa.app.registration.RegistrationTest"/>
+    </classes>
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.formsdirectinc.qa.app.registration.RegistrationTest">
+        <methods>
+          <include name="testCase4"/>
+          <include name="testCase3"/>
+          <include name="testCaseDefault"/>
+          <include name="testCase2"/>
+          <include name="testCase1"/>
+          <include name="initTest"/>
+          <include name="startTest"/>
+        </methods>
+      </class> <!-- com.formsdirectinc.qa.app.registration.RegistrationTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

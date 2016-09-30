@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-registration-test">
-              <span class="suite-name border-failed">registration-test</span>
+              <span class="suite-name border-passed">registration-test</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,12 +54,12 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-registration-test">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-registration-test">
-                    <span>4 groups</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-registration-test" class="hide-methods failed suite-registration-test"> (hide)</a> <!-- hide-methods failed suite-registration-test -->
-                      <a href="#" panel-name="suite-registration-test" class="show-methods failed suite-registration-test"> (show)</a> <!-- show-methods failed suite-registration-test -->
-                    </span>
-                    <div class="method-list-content failed suite-registration-test">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-registration-test" title="com.formsdirectinc.qa.app.registration.RegistrationTest" hash-for-method="testCase2">testCase2</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-registration-test -->
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,17 +102,7 @@
                     <div class="method-list-content passed suite-registration-test">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-registration-test" title="com.formsdirectinc.qa.app.registration.RegistrationTest" hash-for-method="testCase1">testCase1</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-registration-test" title="com.formsdirectinc.qa.app.registration.RegistrationTest" hash-for-method="testCase3">testCase3</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-registration-test" title="com.formsdirectinc.qa.app.registration.RegistrationTest" hash-for-method="testCase4">testCase4</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-registration-test" title="com.formsdirectinc.qa.app.registration.RegistrationTest" hash-for-method="test">test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-registration-test -->
@@ -141,30 +117,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-registration-test" class="panel registration-test">
-          <div class="suite-registration-test-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.formsdirectinc.qa.app.registration.RegistrationTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCase2">
-                  </a> <!-- testCase2 -->
-                  <span class="method-name">testCase2</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at com.formsdirectinc.qa.app.registration.testcase.Footer.verifyRegistrationDisclaimer(Footer.java:42)
-	at com.formsdirectinc.qa.app.registration.RegistrationTest.testCase2(RegistrationTest.java:115)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-registration-test-class-failed -->
           <div class="suite-registration-test-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -173,23 +125,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testCase1">
-                  </a> <!-- testCase1 -->
-                  <span class="method-name">testCase1</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCase3">
-                  </a> <!-- testCase3 -->
-                  <span class="method-name">testCase3</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCase4">
-                  </a> <!-- testCase4 -->
-                  <span class="method-name">testCase4</span>
+                  <a name="test">
+                  </a> <!-- test -->
+                  <span class="method-name">test</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -203,61 +141,22 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;registration-test&quot; parallel=&quot;tests&quot;&gt;
+&lt;suite thread-count=&quot;10&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;9&quot; name=&quot;registration-test&quot;&gt;
+  &lt;parameter name=&quot;&quot; value=&quot;&quot;/&gt;
   &lt;parameter name=&quot;password&quot; value=&quot;123456&quot;/&gt;
-  &lt;parameter name=&quot;product&quot; value=&quot;i90&quot;/&gt;
-  &lt;parameter name=&quot;siteurl&quot; value=&quot;https://www.us-immigration.com&quot;/&gt;
-  &lt;parameter name=&quot;senderemail&quot; value=&quot;yazar.testnew@gmail.com&quot;/&gt;
-  &lt;parameter name=&quot;sitename&quot; value=&quot;AIC&quot;/&gt;
-  &lt;parameter name=&quot;senderpassword&quot; value=&quot;!Welcome0&quot;/&gt;
-  &lt;parameter name=&quot;receiveremail&quot; value=&quot;mohamed.yazar@dcis.net&quot;/&gt;
-  &lt;parameter name=&quot;username&quot; value=&quot;&quot;/&gt;
-  &lt;parameter name=&quot;receiveremailcc&quot; value=&quot;pradeep_h@dcis.net&quot;/&gt;
+  &lt;parameter name=&quot;product&quot; value=&quot;i130&quot;/&gt;
+  &lt;parameter name=&quot;siteurl&quot; value=&quot;https://www.fileright.com&quot;/&gt;
+  &lt;parameter name=&quot;emailconfiguration&quot; value=&quot;src/test/resources/registration/emailConfiguration.properties&quot;/&gt;
+  &lt;parameter name=&quot;sitename&quot; value=&quot;FR&quot;/&gt;
+  &lt;parameter name=&quot;flowname&quot; value=&quot;TestFlow1&quot;/&gt;
+  &lt;parameter name=&quot;lang&quot; value=&quot;es&quot;/&gt;
+  &lt;parameter name=&quot;mailalert&quot; value=&quot;false&quot;/&gt;
+  &lt;parameter name=&quot;username&quot; value=&quot;test-30-09@dcis.net&quot;/&gt;
   &lt;test name=&quot;Registration-Test&quot;&gt;
-    &lt;groups&gt;
-      &lt;define name=&quot;default-test&quot;&gt;
-        &lt;include name=&quot;default&quot;/&gt;
-      &lt;/define&gt; &lt;!-- default-test --&gt;
-      &lt;define name=&quot;Registration-all&quot;&gt;
-        &lt;include name=&quot;Registration.Test.*&quot;/&gt;
-        &lt;include name=&quot;default&quot;/&gt;
-      &lt;/define&gt; &lt;!-- Registration-all --&gt;
-      &lt;define name=&quot;Registration-Test-Footer&quot;&gt;
-        &lt;include name=&quot;Registration.Test.footerdisclaimer&quot;/&gt;
-        &lt;include name=&quot;default&quot;/&gt;
-      &lt;/define&gt; &lt;!-- Registration-Test-Footer --&gt;
-      &lt;define name=&quot;Registration-Test-Scritps&quot;&gt;
-        &lt;include name=&quot;Registration.Test.scriptVerification&quot;/&gt;
-        &lt;include name=&quot;default&quot;/&gt;
-      &lt;/define&gt; &lt;!-- Registration-Test-Scritps --&gt;
-      &lt;define name=&quot;Registration-Test-Label&quot;&gt;
-        &lt;include name=&quot;Registration.Test.pagelabel&quot;/&gt;
-        &lt;include name=&quot;default&quot;/&gt;
-      &lt;/define&gt; &lt;!-- Registration-Test-Label --&gt;
-      &lt;run&gt;
-        &lt;include name=&quot;Registration-all&quot;/&gt;
-      &lt;/run&gt;
-    &lt;/groups&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.formsdirectinc.qa.app.registration.RegistrationTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Registration-Test --&gt;
-  &lt;test name=&quot;Registration-Test(failed)&quot; parallel=&quot;tests&quot;&gt;
-    &lt;groups&gt;
-      &lt;run&gt;
-        &lt;include name=&quot;Registration-all&quot;/&gt;
-      &lt;/run&gt;
-    &lt;/groups&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;com.formsdirectinc.qa.app.registration.RegistrationTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;testCaseDefault&quot;/&gt;
-          &lt;include name=&quot;testCase2&quot;/&gt;
-          &lt;include name=&quot;startTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.formsdirectinc.qa.app.registration.RegistrationTest --&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Registration-Test(failed) --&gt;
 &lt;/suite&gt; &lt;!-- registration-test --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -271,9 +170,6 @@
               <li>
                 <span class="test-name">Registration-Test (1 class)</span>
               </li>
-              <li>
-                <span class="test-name">Registration-Test(failed) (1 class)</span>
-              </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -282,38 +178,6 @@
             <span class="header-content">Groups for registration-test</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">Registration.Test.footerdisclaimer</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">testCase2</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
-              <span class="test-group-name">Registration.Test.pagelabel</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">testCase4</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
-              <span class="test-group-name">Registration.Test.scriptVerification</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">testCase1</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
-              <span class="test-group-name">Registration.Test.title</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">testCase3</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-registration-test" class="panel">
@@ -330,28 +194,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testCase4')
+data.setCell(0, 1, 'test')
 data.setCell(0, 2, 'com.formsdirectinc.qa.app.registration.RegistrationTest')
-data.setCell(0, 3, 248);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testCase1')
-data.setCell(1, 2, 'com.formsdirectinc.qa.app.registration.RegistrationTest')
-data.setCell(1, 3, 128);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testCase3')
-data.setCell(2, 2, 'com.formsdirectinc.qa.app.registration.RegistrationTest')
-data.setCell(2, 3, 48);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testCase2')
-data.setCell(3, 2, 'com.formsdirectinc.qa.app.registration.RegistrationTest')
-data.setCell(3, 3, 11);
+data.setCell(0, 3, 1752);
 window.suiteTableData['registration-test']= { tableData: data, tableDiv: 'times-div-registration-test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 435 ms</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-registration-test">
               </div> <!-- times-div-registration-test -->
             </div> <!-- times-div -->
@@ -378,32 +230,42 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.formsdirectinc.qa.app.registration.RegistrationTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">startTest(AIC, https://www.us-immigration.com, i90, , 123456)</span>
+              <div class="configuration-suite before">
+                <span class="method-name">setAlert(false)</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-suite before">
+                <span class="method-name">setLang(es)</span>
+                <span class="method-start">10 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-suite before">
+                <span class="method-name">setProduct(i130)</span>
+                <span class="method-start">10 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-suite before">
+                <span class="method-name">setSite(FR)</span>
+                <span class="method-start">11 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-suite before">
+                <span class="method-name">setSiteurl(https://www.fileright.com)</span>
+                <span class="method-start">11 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-test before">
+                <span class="method-name">startTest</span>
+                <span class="method-start">14 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">testCase1</span>
-                <span class="method-start">11424 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">testCase2</span>
-                <span class="method-start">11555 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testCase3</span>
-                <span class="method-start">11570 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testCase4</span>
-                <span class="method-start">11620 ms</span>
+                <span class="method-name">test</span>
+                <span class="method-start">10747 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <span class="method-name">testCaseDefault(AIC, https://www.us-immigration.com, i90, yazar.testnew@gmail.com, mohamed.yazar@dcis.net, pradeep_h...)</span>
-                <span class="method-start">11870 ms</span>
+                <span class="method-name">testCaseDefault(src/test/resources/registration/emailConfiguration.properties)</span>
+                <span class="method-start">12502 ms</span>
               </div> <!-- configuration-test after -->
+              <div class="configuration-suite after">
+                <span class="method-name">endTest</span>
+                <span class="method-start">14593 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

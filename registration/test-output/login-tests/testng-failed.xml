@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [login-tests]" parallel="tests">
+  <parameter name="site" value="AIC"/>
+  <parameter name="product" value="i485"/>
+  <parameter name="siteurl" value="https://www.us-immigration.com"/>
+  <parameter name="Username" value="mohamed.yazar@dcis.net"/>
+  <parameter name="Password" value="123456"/>
+  <test name="Login">
+    <classes>
+      <class name="com.formsdirectinc.qa.app.registration.LoginTest"/>
+    </classes>
+  </test> <!-- Login -->
+  <test name="Login(failed)" parallel="tests">
+    <classes>
+      <class name="com.formsdirectinc.qa.app.registration.LoginTest">
+        <methods>
+          <include name="setAlert"/>
+          <include name="test"/>
+        </methods>
+      </class> <!-- com.formsdirectinc.qa.app.registration.LoginTest -->
+    </classes>
+  </test> <!-- Login(failed) -->
+</suite> <!-- Failed suite [login-tests] -->

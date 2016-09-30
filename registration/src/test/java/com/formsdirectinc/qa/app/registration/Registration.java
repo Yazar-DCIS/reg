@@ -8,8 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 
+import com.formsdirectinc.qa.app.registration.services.EmailIDGenerator;
 import com.formsdirectinc.qa.tags.BaseTag;
-import com.formsdirectinc.qa.utils.EmailIDGenerator;
+
 
 /**
  * Sign UP: Selenium page Model for Register And Payment Controls
@@ -18,7 +19,7 @@ import com.formsdirectinc.qa.utils.EmailIDGenerator;
  * @Date: 24/02/2016
  */
 public class Registration extends BaseTag {
-
+		
 	String firstNameFieldExpression = "%s-firstName";
 	String emailFieldExpression = "%s-emailId";
 	String lastNameFieldExpression = "%s-lastName";
@@ -54,22 +55,22 @@ public class Registration extends BaseTag {
 		return this;
 	}
 
-	public String setEMail(String email) {
+	public String setEMail(String email,String product,String flowname) {
 		valuefield = driver.findElement(By.id(String.format(
-				emailFieldExpression, property)));
+		emailFieldExpression, property)));
 		valuefield.sendKeys(email);
 		Reporter.log("<br>" + "EMail ID" + "<br>" + "<font color=\"green\">"
-				+ email + "</font>");
+		+ email + "</font>");
 		EmailIDGenerator writeEmail = PageFactory.initElements(driver,
-				EmailIDGenerator.class);
+		EmailIDGenerator.class);
 		try {
-			writeEmail.writeEMail_ID(email);
+		writeEmail.writeEMail_ID(email,product,flowname);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 		}
 		return email;
-	}
+		}
 
 	public Registration setConfirmPassword(String confirmPassword) {
 		valuefield = driver.findElement(By.id(String.format(

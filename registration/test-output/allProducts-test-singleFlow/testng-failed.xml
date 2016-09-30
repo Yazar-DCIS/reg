@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [allProducts-test-singleFlow]" parallel="tests">
+  <parameter name="" value=""/>
+  <parameter name="password" value="123456"/>
+  <parameter name="product" value="i90"/>
+  <parameter name="siteurl" value="https://stage.us-immigration.com"/>
+  <parameter name="emailconfiguration" value="src/test/resources/registration/emailConfiguration.properties"/>
+  <parameter name="sitename" value="AIC"/>
+  <parameter name="flowname" value="TestFlow1"/>
+  <parameter name="applicationID" value=""/>
+  <parameter name="mailalert" value="true"/>
+  <parameter name="username" value=""/>
+  <test name="i90">
+    <parameter name="product" value="i90"/>
+    <parameter name="flowname" value="TestFlow1"/>
+    <classes>
+      <class name="com.formsdirectinc.qa.app.registration.RegistrationTest"/>
+    </classes>
+  </test> <!-- i90 -->
+  <test name="i90(failed)" parallel="tests">
+    <parameter name="product" value="i90"/>
+    <parameter name="flowname" value="TestFlow1"/>
+    <classes>
+      <class name="com.formsdirectinc.qa.app.registration.RegistrationTest">
+        <methods>
+          <include name="setProduct"/>
+          <include name="testCaseDefault"/>
+          <include name="test"/>
+          <include name="setSiteurl"/>
+          <include name="startTest"/>
+          <include name="setSite"/>
+          <include name="setLang"/>
+        </methods>
+      </class> <!-- com.formsdirectinc.qa.app.registration.RegistrationTest -->
+    </classes>
+  </test> <!-- i90(failed) -->
+</suite> <!-- Failed suite [allProducts-test-singleFlow] -->

@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="login-tests" parallel="tests"	verbose="1" thread-count="5" preserve-order="true">
-	<parameter name="sitename" value="AIC"/>
+<suite name="login-tests" parallel="tests"	verbose="10" thread-count="5" preserve-order="true">
+	<parameter name="site" value="AIC"/>
 	<parameter name="siteurl" value="https://www.us-immigration.com" />
+	 <parameter name="Username" value="mohamed.yazar@dcis.net" /> <!-- to generate random email-id -->
+	<parameter name="Password" value="123456" />
+	<parameter name="product" value="i485" />
+	<parameter name="mailalert" value="false"></parameter>
 	 <test name="Login" allow-return-values="true">
-		<parameter name="username" value="orinznew@dcis.net" />
-		<parameter name="password" value="123456" />
-		<classes>
-			<class name="com.formsdirectinc.qa.app.registration.LoginTest"></class>
-		</classes>
-	</test>	
-	
-	<test name="Login-Incorrect" allow-return-values="true">
-		<parameter name="username" value="orinz@dcis.net" />
-		<parameter name="password" value="123456" />
+			
 		<classes>
 			<class name="com.formsdirectinc.qa.app.registration.LoginTest"></class>
 		</classes>

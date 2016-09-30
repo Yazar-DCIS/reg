@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" [<!ENTITY site-parameters SYSTEM "src/test/resources/registration/testsuites/parameters.xml">]>
+<suite name="allProducts-test-singleFlow" parallel="tests"	verbose="1" thread-count="3" preserve-order="true">
+<!-- To test products in random (EQ - Registration- Payment- SQ) -->
+
+<parameter name="" value="">&site-parameters;</parameter>
+<parameter name="applicationID" value="" />
+
+
+<test name="i90" allow-return-values="true">
+<parameter name="product" value="i90" />
+<parameter name="flowname" value="TestFlow1" />
+
+	
+	<classes>
+	<class name="com.formsdirectinc.qa.app.registration.RegistrationTest"></class>
+	</classes>
+</test>
+		
+</suite>
